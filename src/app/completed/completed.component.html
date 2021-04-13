@@ -22,7 +22,7 @@
 </div> -->
 
 <mat-accordion class="matches max" multi>
-  <mat-expansion-panel class="match-card" *ngFor="let match of matches">
+  <mat-expansion-panel class="match-card" *ngFor="let match of matches | orderBy:'matchId':'dec'">
     <mat-expansion-panel-header class="match-header">
       <div class="home-content">
         <button mat-fab class="home-btn" disabled
@@ -61,7 +61,7 @@
 </mat-accordion>
 
 <mat-accordion class="matches mini" multi>
-  <mat-expansion-panel class="match-card" *ngFor="let match of matches">
+  <mat-expansion-panel class="match-card" *ngFor="let match of matches | orderBy:'matchId':'dec'">
     <mat-expansion-panel-header class="match-header">
       <div class="match-header2">
         <mat-card-header class="card-header">
