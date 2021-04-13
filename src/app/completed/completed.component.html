@@ -1,26 +1,3 @@
-<!-- <div class="matches max">
-  <mat-card class="match-card" *ngFor="let match of matches">
-    <div class="home-content">
-      <button mat-fab class="home-btn" disabled
-        [ngClass]="{'selected': isSelected(match, match.homeTeam) == true, 'winner' : isWinner(match, match.homeTeam) }">
-        <img src="../../assets/{{match.homeImg}}" [alt]="match.homeTeam" height="80" width="80">
-      </button>
-    </div>
-    <mat-card-header class="card-header">
-      <mat-card-subtitle class="color-orange"><b>Match {{match.matchId}}</b></mat-card-subtitle>
-      <mat-card-title>{{match.date | date: 'fullDate'}}</mat-card-title>
-      <mat-card-subtitle>{{match.date | date: 'shortTime'}}</mat-card-subtitle>
-      <mat-card-subtitle>{{match.location}}</mat-card-subtitle>
-    </mat-card-header>
-    <div class="away-content">
-      <button mat-fab class="away-btn" disabled
-        [ngClass]="{'selected': isSelected(match, match.awayTeam) == true, 'winner' : isWinner(match, match.awayTeam) }">
-        <img src="../../assets/{{match.awayImg}}" [alt]="match.awayTeam" height="80" width="80">
-      </button>
-    </div>
-  </mat-card>
-</div> -->
-
 <mat-accordion class="matches max" multi>
   <mat-expansion-panel class="match-card" *ngFor="let match of matches | orderBy:'matchId':'dec'">
     <mat-expansion-panel-header class="match-header">
@@ -47,12 +24,14 @@
     <div class="match-body">
       <table class="match-body-table">
         <tr>
-          <th>Name</th>
-          <th>Selected</th>
+          <th class="text-left">Name</th>
+          <th class="text-left">Selected</th>
+          <th class="text-right">Points</th>
         </tr>
         <tr *ngFor="let user of match.users2">
-          <td>{{user.name}}</td>
-          <td>{{user.selected}}</td>
+          <td class="text-left">{{user.name}}</td>
+          <td class="text-left">{{user.selected}}</td>
+          <td class="text-right">{{user.points}}</td>
         </tr>
       </table>
     </div>
@@ -90,40 +69,17 @@
     <div class="match-body">
       <table class="match-body-table">
         <tr>
-          <th>Name</th>
-          <th>Selected</th>
+          <th class="text-left">Name</th>
+          <th class="text-left">Selected</th>
+          <th class="text-right">Points</th>
         </tr>
         <tr *ngFor="let user of match.users2">
-          <td>{{user.name}}</td>
-          <td>{{user.selected}}</td>
+          <td class="text-left">{{user.name}}</td>
+          <td class="text-left">{{user.selected}}</td>
+          <td class="text-right">{{user.points}}</td>
         </tr>
       </table>
     </div>
 
   </mat-expansion-panel>
 </mat-accordion>
-
-<!-- <div class="matches mini">
-  <mat-card class="match-card" *ngFor="let match of matches | orderBy:'matchId':'dec'">
-    <mat-card-header class="card-header">
-      <mat-card-subtitle class="color-orange subtitle"><b>Match {{match.matchId}}</b></mat-card-subtitle>
-      <mat-card-title class="title">{{match.date | date: 'fullDate'}}</mat-card-title>
-      <mat-card-subtitle class="subtitle">{{match.date | date: 'shortTime'}}</mat-card-subtitle>
-      <mat-card-subtitle class="subtitle">{{match.location}}</mat-card-subtitle>
-    </mat-card-header>
-    <div class="content">
-      <div class="home-content">
-        <button mat-fab class="home-btn" disabled
-          [ngClass]="{'selected': isSelected(match, match.homeTeam) == true, 'winner' : isWinner(match, match.homeTeam) }">
-          <img src="../../assets/{{match.homeImg}}" [alt]="match.homeTeam" class="img">
-        </button>
-      </div>
-      <div class="away-content">
-        <button mat-fab class="away-btn" disabled
-          [ngClass]="{'selected': isSelected(match, match.awayTeam) == true, 'winner' : isWinner(match, match.awayTeam) }">
-          <img src="../../assets/{{match.awayImg}}" [alt]="match.awayTeam" class="img">
-        </button>
-      </div>
-    </div>
-  </mat-card>
-</div> -->

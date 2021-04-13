@@ -1,0 +1,38 @@
+.points-table {
+  width: 100%;
+  background-color: #fafafa;
+  padding: 1rem;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.points-table tr{
+  background-color: #eee;
+}
+
+.points-table tr th, .points-table tr td{
+  padding: 1rem 10px;
+}
+
+@media only screen and (max-width: 750px) {
+  .points-table {
+    max-width: 40rem;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .points-table {
+    max-width: 40rem;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .points-table {
+    max-width: 40rem;
+    font-size: 10px;
+  }
+}
+
+

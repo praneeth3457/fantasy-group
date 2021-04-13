@@ -1,1 +1,22 @@
-<p>points works!</p>
+<div class="points">
+  <table class="points-table">
+    <tr>
+      <th class="text-center">POS</th>
+      <th class="text-left">NAME</th>
+      <th class="text-right">MATCHES</th>
+      <th class="text-right">WIN</th>
+      <th class="text-right">LOSS</th>
+      <th class="text-right">NOT SELECTED</th>
+      <th class="text-right">NRR</th>
+    </tr>
+    <tr *ngFor="let pt of points | sort:'win':'points':'name'; let i = index">
+      <td class="text-center">{{i+1}}</td>
+      <td class="text-left">{{pt.name | uppercase}}</td>
+      <td class="text-right">{{pt.matches}}</td>
+      <td class="text-right">{{pt.win}}</td>
+      <td class="text-right">{{pt.loss}}</td>
+      <td class="text-right">{{pt.notSelected}}</td>
+      <td class="text-right">{{pt.points}}</td>
+    </tr>
+  </table>
+</div>

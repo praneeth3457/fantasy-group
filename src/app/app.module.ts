@@ -27,6 +27,7 @@ import { CompletedComponent } from './completed/completed.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { PointsComponent } from './points/points.component';
 import { OrderByPipe } from './order-by.pipe';
+import { SortPipe } from './sort.pipe';
 
 const routes: Routes = [
   { path: 'matches', canActivate: [ AuthGuardService ], component: MatchesComponent },
@@ -42,7 +43,8 @@ const routes: Routes = [
     CompletedComponent,
     UpcomingComponent,
     PointsComponent,
-    OrderByPipe
+    OrderByPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,

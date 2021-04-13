@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-points',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PointsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiSerice: ApiService) { }
+
+  points = [];
 
   ngOnInit(): void {
+    this.apiSerice.getPoints().subscribe((points: any) => {
+      if(points.statusCode == 200) {
+        this.points = points.result;
+      }
+    })
   }
 
 }

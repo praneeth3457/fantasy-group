@@ -72,6 +72,10 @@ export class ApiService {
     return this.http.get(this.API_ENDPOINT + "completedMatches");
   }
 
+  getPoints() {
+    return this.http.get(this.API_ENDPOINT + "getPoints");
+  }
+
   setUserMatch(userObj) {
     return this.http.post(
       this.API_ENDPOINT + "setUserMatch",

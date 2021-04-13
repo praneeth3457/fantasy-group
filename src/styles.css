@@ -23,6 +23,14 @@ body, .root {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
 .mt-3 {
   margin-top: 15px;
 }
