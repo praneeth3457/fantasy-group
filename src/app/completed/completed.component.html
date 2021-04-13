@@ -26,7 +26,7 @@
     <mat-expansion-panel-header class="match-header">
       <div class="home-content">
         <button mat-fab class="home-btn" disabled
-          [ngClass]="{'selected': isSelected(match, match.homeTeam) == true, 'winner' : isWinner(match, match.homeTeam) }">
+          [ngClass]="{'selected': isSelected(match, match.homeTeam), 'winner' : isWinner(match, match.homeTeam) }">
           <img src="../../assets/{{match.homeImg}}" [alt]="match.homeTeam" height="80" width="80">
         </button>
       </div>
@@ -38,7 +38,7 @@
       </mat-card-header>
       <div class="away-content">
         <button mat-fab class="away-btn" disabled
-          [ngClass]="{'selected': isSelected(match, match.awayTeam) == true, 'winner' : isWinner(match, match.awayTeam) }">
+          [ngClass]="{'selected': isSelected(match, match.awayTeam), 'winner' : isWinner(match, match.awayTeam) }">
           <img src="../../assets/{{match.awayImg}}" [alt]="match.awayTeam" height="80" width="80">
         </button>
       </div>
@@ -50,7 +50,7 @@
           <th>Name</th>
           <th>Selected</th>
         </tr>
-        <tr *ngFor="let user of match.users">
+        <tr *ngFor="let user of match.users2">
           <td>{{user.name}}</td>
           <td>{{user.selected}}</td>
         </tr>
@@ -73,13 +73,13 @@
         <div class="content">
           <div class="home-content">
             <button mat-fab class="home-btn" disabled
-              [ngClass]="{'selected': isSelected(match, match.homeTeam) == true, 'winner' : isWinner(match, match.homeTeam) }">
+              [ngClass]="{'selected': isSelected(match, match.homeTeam), 'winner' : isWinner(match, match.homeTeam) }">
               <img src="../../assets/{{match.homeImg}}" [alt]="match.homeTeam" class="img">
             </button>
           </div>
           <div class="away-content">
             <button mat-fab class="away-btn" disabled
-              [ngClass]="{'selected': isSelected(match, match.awayTeam) == true, 'winner' : isWinner(match, match.awayTeam) }">
+              [ngClass]="{'selected': isSelected(match, match.awayTeam), 'winner' : isWinner(match, match.awayTeam) }">
               <img src="../../assets/{{match.awayImg}}" [alt]="match.awayTeam" class="img">
             </button>
           </div>
@@ -93,7 +93,7 @@
           <th>Name</th>
           <th>Selected</th>
         </tr>
-        <tr *ngFor="let user of match.users">
+        <tr *ngFor="let user of match.users2">
           <td>{{user.name}}</td>
           <td>{{user.selected}}</td>
         </tr>

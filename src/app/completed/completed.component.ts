@@ -24,7 +24,7 @@ export class CompletedComponent implements OnInit {
           m['awayImg'] = this.getTeamImg(m.awayTeam);
 
           let userKeys = Object.keys(m.users);
-          m['users'] = userKeys.map(k => m.users[k]);
+          m['users2'] = userKeys.map(k => m.users[k]);
           return m;
         });
       }
