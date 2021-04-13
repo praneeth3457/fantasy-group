@@ -4,7 +4,10 @@
       <div class="text-center">
         <h4>Log in to your account</h4>
       </div>
-      <form (ngSubmit)="signin(loginForm)" #loginForm="ngForm">
+      <div class="text-center error" *ngIf="errorMsg != ''">
+        <h5>{{errorMsg}}</h5>
+      </div>
+      <form (ngSubmit)="signin(loginForm); loginForm.resetForm()" #loginForm="ngForm">
         <mat-form-field appearance="legacy" class="auth-input">
           <mat-label>Username</mat-label>
           <input matInput placeholder="Username" id="loginUsername" ngModel name="loginUsername">

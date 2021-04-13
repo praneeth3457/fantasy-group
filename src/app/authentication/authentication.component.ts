@@ -13,6 +13,7 @@ export class AuthenticationComponent implements OnInit {
   constructor(private apiSerice: ApiService, private router: Router) { }
 
   isSignin = true;
+  errorMsg = '';
 
   ngOnInit(): void {
   }
@@ -28,7 +29,13 @@ export class AuthenticationComponent implements OnInit {
   signin(form: NgForm) {
     if(form.value.loginUsername != '' && form.value.loginPassword != '') {
       this.apiSerice.login({username: form.value.loginUsername, password: form.value.loginPassword}).subscribe(res => {
-        this.router.navigate(['/matches']);
+        if(res.statusCode == 200){
+          this.router.navigate(['/matches']);
+        } else if (res.statusCode == 500){
+          this.errorMsg = res.status;
+          this.
+        }
+
       });
     }
   }
