@@ -1,0 +1,122 @@
+:host {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.matches {
+  display: flex;
+  margin: 1rem;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: auto;
+  align-items: center;
+}
+
+.mini {
+  display: none;
+}
+
+.match-card {
+  margin: 1rem;
+  display: flex;
+  background-color: rgb(235, 241, 246);
+  border-bottom: 5px solid #607d8b;
+  vertical-align: middle;
+  max-width: 40rem;
+  width: 40rem;
+}
+
+.card-header {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-content {
+  text-align: right;
+}
+
+.away-content {
+  text-align: left;
+}
+
+.home-content, .away-content {
+  flex: 1;
+}
+
+.home-btn, .away-btn {
+  height: 120px;
+  width: 120px;
+  background: #fafafa;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.home-btn.selected, .away-btn.selected {
+  background-color: #607d8b;
+}
+
+.home-btn:disabled, .away-btn:disabled {
+  cursor:not-allowed;
+}
+
+.home-btn:hover:not(.mat-button-disabled), .away-btn:hover:not(.mat-button-disabled) {
+  background-color: rgb(148, 172, 190);
+  color: #fafafa;
+}
+
+.img {
+  width: 80px;
+  height: 80px;
+}
+
+
+
+
+@media only screen and (max-width: 750px) {
+  .max {
+    display: none;
+  }
+
+  .mini {
+    display: flex;
+  }
+
+  .matches {
+    margin: 0.5rem 0;
+  }
+  .match-card {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .content {
+    display: flex;
+  }
+
+  .home-btn, .away-btn {
+    height: 80px;
+    width: 80px;
+  }
+
+  .img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-header {
+    flex-direction: row;
+  }
+
+  .subtitle{
+    font-size: 12px;
+  }
+
+  .title{
+    font-size: 14px;
+  }
+
+}

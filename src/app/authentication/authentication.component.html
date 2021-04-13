@@ -1,0 +1,65 @@
+<div class="authenticate">
+  <mat-card class="login-form" *ngIf="isSignin;else signUp">
+    <div class="card-body text-center">
+      <div class="text-center">
+        <h4>Log in to your account</h4>
+      </div>
+      <form (ngSubmit)="signin(loginForm)" #loginForm="ngForm">
+        <mat-form-field appearance="legacy" class="auth-input">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Username" id="loginUsername" ngModel name="loginUsername">
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="auth-input">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" type="password" id="loginPassword" ngModel name="loginPassword">
+        </mat-form-field>
+
+        <div class="mt-3">
+          <button mat-raised-button color="primary" class="auth-input" type="submit">SIGN IN</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card-footer text-center">
+      <div class="form-group" style="margin-bottom: 0px;">
+          <label class="cm-text-secondary" for="exampleInputPassword1" style="margin-bottom: 0; padding: 0.375rem; line-height: 1.5;vertical-align: middle;">Don't have an account?</label>
+          <a href="javascript:void(0)" class="text-info cm-link-btn" style="padding: 0px" (click)="isSignin = false">Sign up</a>
+      </div>
+  </div>
+  </mat-card>
+
+  <ng-template #signUp>
+    <mat-card class="login-form">
+      <div class="card-body text-center">
+        <div class="text-center">
+          <h4>Sign up to your account</h4>
+        </div>
+        <form (ngSubmit)="register(registerForm)" #registerForm="ngForm">
+          <mat-form-field appearance="legacy" class="auth-input">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name" id="registerName" ngModel name="registerName">
+          </mat-form-field>
+          <mat-form-field appearance="legacy" class="auth-input">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" id="registerUsername" ngModel name="registerUsername">
+          </mat-form-field>
+          <mat-form-field appearance="legacy" class="auth-input">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" type="password" id="registerPassword" ngModel name="registerPassword">
+          </mat-form-field>
+
+          <div class="mt-3">
+            <button mat-raised-button color="primary" class="auth-input" type="submit">REGISTER</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card-footer text-center">
+        <div class="form-group" style="margin-bottom: 0px;">
+            <label class="cm-text-secondary" for="exampleInputPassword1" style="margin-bottom: 0; padding: 0.375rem; line-height: 1.5;vertical-align: middle;">Already have an account?</label>
+            <a href="javascript:void(0)" class="text-info cm-link-btn" style="padding: 0px" (click)="isSignin = true">Sign in</a>
+        </div>
+      </div>
+    </mat-card>
+  </ng-template>
+</div>

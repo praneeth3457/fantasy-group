@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body, .root { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body, .root {
+  display: flex;
+}
+
+.bg-color {
+  background-color: #B0BEC5;
+}
+
+.bg-secondary {
+  background-color: #dbdbdb;
+}
+
+.bg-light-secondary {
+  background-color: #eee;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-3 {
+  margin-top: 15px;
+}
+
+.color-orange {
+  color: #f0634b;
+}
+
+.color-blue {
+  color: #1f6acc;
+}
+

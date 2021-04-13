@@ -1,0 +1,43 @@
+<div class="matches max">
+  <mat-card class="match-card" *ngFor="let match of matches">
+    <div class="home-content">
+      <button mat-fab class="home-btn" (click)="saveTeam(match, match.homeTeam)" [ngClass]="isSelected(match, match.homeTeam) ? 'selected': ''">
+        <img src="../../assets/{{match.homeImg}}" [alt]="match.homeTeam" height="80" width="80">
+      </button>
+    </div>
+    <mat-card-header class="card-header">
+      <mat-card-subtitle class="color-orange"><b>Match {{match.matchId}}</b></mat-card-subtitle>
+      <mat-card-title>{{match.date | date: 'fullDate'}}</mat-card-title>
+      <mat-card-subtitle>{{match.date | date: 'shortTime'}}</mat-card-subtitle>
+      <mat-card-subtitle>{{match.location}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="away-content">
+      <button mat-fab class="away-btn" (click)="saveTeam(match, match.awayTeam)" [ngClass]="isSelected(match, match.awayTeam) ? 'selected': ''">
+        <img src="../../assets/{{match.awayImg}}" [alt]="match.awayTeam" height="80" width="80">
+      </button>
+    </div>
+  </mat-card>
+</div>
+
+<div class="matches mini">
+  <mat-card class="match-card" *ngFor="let match of matches">
+    <mat-card-header class="card-header">
+      <mat-card-subtitle class="color-orange subtitle"><b>Match {{match.matchId}}</b></mat-card-subtitle>
+      <mat-card-title class="title">{{match.date | date: 'fullDate'}}</mat-card-title>
+      <mat-card-subtitle class="subtitle">{{match.date | date: 'shortTime'}}</mat-card-subtitle>
+      <mat-card-subtitle class="subtitle">{{match.location}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="content">
+      <div class="home-content">
+        <button mat-fab class="home-btn" (click)="saveTeam(match, match.homeTeam)" [ngClass]="isSelected(match, match.homeTeam) ? 'selected': ''">
+          <img src="../../assets/{{match.homeImg}}" [alt]="match.homeTeam" class="img">
+        </button>
+      </div>
+      <div class="away-content">
+        <button mat-fab class="away-btn" (click)="saveTeam(match, match.awayTeam)" [ngClass]="isSelected(match, match.awayTeam) ? 'selected': ''">
+          <img src="../../assets/{{match.awayImg}}" [alt]="match.awayTeam" class="img">
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</div>
