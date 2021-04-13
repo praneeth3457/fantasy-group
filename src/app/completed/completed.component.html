@@ -22,7 +22,7 @@
 </div>
 
 <div class="matches mini">
-  <mat-card class="match-card" *ngFor="let match of matches">
+  <mat-card class="match-card" *ngFor="let match of matches | orderBy:'matchId':'dec'">
     <mat-card-header class="card-header">
       <mat-card-subtitle class="color-orange subtitle"><b>Match {{match.matchId}}</b></mat-card-subtitle>
       <mat-card-title class="title">{{match.date | date: 'fullDate'}}</mat-card-title>

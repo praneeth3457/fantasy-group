@@ -25,6 +25,7 @@ import { ApiService } from './api.service';
 import { CompletedComponent } from './completed/completed.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { PointsComponent } from './points/points.component';
+import { OrderByPipe } from './order-by.pipe';
 
 const routes: Routes = [
   { path: 'matches', canActivate: [ AuthGuardService ], component: MatchesComponent },
@@ -39,7 +40,8 @@ const routes: Routes = [
     MatchesComponent,
     CompletedComponent,
     UpcomingComponent,
-    PointsComponent
+    PointsComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
