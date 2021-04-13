@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { MatchesComponent } from './matches/matches.component';
@@ -58,7 +59,8 @@ const routes: Routes = [
     MatIconModule,
     MatButtonToggleModule,
     MatTabsModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatExpansionModule
   ],
   exports: [RouterModule],
   providers: [ApiService, AuthGuardService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],

@@ -20,11 +20,22 @@
 .match-card {
   margin: 1rem;
   display: flex;
+  flex-direction: column;
   background-color: rgb(235, 241, 246);
   border-bottom: 5px solid #607d8b;
   vertical-align: middle;
   max-width: 40rem;
   width: 40rem;
+}
+
+.match-header {
+  height: fit-content !important;
+  margin: 1rem;
+}
+
+.match-body {
+  padding: 1rem;
+  border-top: 1px solid #dbdbdb;
 }
 
 .card-header {
@@ -78,6 +89,25 @@
   border: 5px solid rgb(61, 182, 61);
 }
 
+.mat-content {
+  flex-direction: column;
+}
+
+.match-body-table {
+  width: 100%;
+  background-color: #fafafa;
+  padding: 1rem;
+}
+
+.match-body-table tr td{
+  border-top: 1px solid #dbdbdb;
+}
+
+.match-body-table tr th, .match-body-table tr td{
+  text-align: left;
+  padding: 5px 10px;
+}
+
 
 
 
@@ -122,6 +152,12 @@
 
   .title{
     font-size: 14px;
+  }
+
+  .match-header2 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
 }

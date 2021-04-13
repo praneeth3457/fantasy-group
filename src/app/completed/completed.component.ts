@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../api.service';
+import {MatAccordion} from '@angular/material/expansion';
 
 @Component({
   selector: 'app-completed',
@@ -7,6 +8,8 @@ import { ApiService } from '../api.service';
   styleUrls: ['./completed.component.css']
 })
 export class CompletedComponent implements OnInit {
+
+  @ViewChild(MatAccordion) accordion: MatAccordion;
 
   matches;
   user;
@@ -19,6 +22,9 @@ export class CompletedComponent implements OnInit {
         this.matches = matches.data.map(m => {
           m['homeImg'] = this.getTeamImg(m.homeTeam);
           m['awayImg'] = this.getTeamImg(m.awayTeam);
+
+          let userKeys = Object.keys(m.users);
+          m['users'] = userKeys.map(k => m.users[k]);
           return m;
         });
       }
