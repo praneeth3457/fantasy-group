@@ -33,7 +33,6 @@ export class AuthenticationComponent implements OnInit {
           this.router.navigate(['/matches']);
         } else if (res.statusCode == 500){
           this.errorMsg = res.status;
-          this.
         }
 
       });
