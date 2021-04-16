@@ -1,5 +1,5 @@
 <div class="matches max">
-  <mat-card class="match-card" *ngFor="let match of matches">
+  <mat-card class="match-card" *ngFor="let match of matches | orderBy:'matchId'">
     <div class="home-content">
       <button mat-fab class="home-btn" (click)="saveTeam(match, match.homeTeam)" [ngClass]="isSelected(match, match.homeTeam) ? 'selected': ''">
         <img src="../../assets/{{match.homeImg}}" [alt]="match.homeTeam" height="80" width="80">
@@ -20,7 +20,7 @@
 </div>
 
 <div class="matches mini">
-  <mat-card class="match-card" *ngFor="let match of matches">
+  <mat-card class="match-card" *ngFor="let match of matches | orderBy:'matchId'">
     <mat-card-header class="card-header">
       <mat-card-subtitle class="color-orange subtitle"><b>Match {{match.matchId}}</b></mat-card-subtitle>
       <mat-card-title class="title">{{match.date | date: 'fullDate'}}</mat-card-title>
